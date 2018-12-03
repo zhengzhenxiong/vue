@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Shop from './views/shop.vue'
-import Goods from "./components/goods/app"
 import Login from "./views/login.vue"
 import Reg from './components/reg/reg.vue'
 
@@ -11,8 +9,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Shop',
-      component: Shop,
+      name: 'login',
+      component:Login
       // children:[
       //   {
       //     path:"/shop/goods",
@@ -21,19 +19,29 @@ export default new Router({
       // ]
     },
     {
-      path: '/Shop',
-      name: 'Shop',
+      path: '/login/:username',
+      name: '_login',
+      component: Login
+    },
+    {
+      path: '/reg',
+      name: 'reg',
+      component:Reg
+    },
+    {
+      path: '/info',
+      name: 'info',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/shop.vue'),
+      component: () => import(/* webpackChunkName: "about" */ './views/info.vue'),
       children:[{
         path: 'goods',
         name: 'goods',
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ './components/goods/app.vue')
+        component: () => import(/* webpackChunkName: "about" */ './components/goods/goods.vue')
       },
       {
         path: 'serveres',
@@ -41,7 +49,6 @@ export default new Router({
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ './components/serveres/app.vue')
         component: () => import(/* webpackChunkName: "about" */ './components/serveres/serveres.vue')
       },
       {
@@ -58,7 +65,6 @@ export default new Router({
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ './components/outlets/app.vue')
         component: () => import(/* webpackChunkName: "about" */ './components/outlets/outlets.vue')
       }
     ],

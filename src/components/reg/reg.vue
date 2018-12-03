@@ -89,6 +89,7 @@ export default {
         userType: 1, //用户角色，1为门店，0为平台管理,此页面是注册门店，默认为1
         userStatus: 1 //1为申请，2为可用，3为不可用，默认为1
       },
+      //正则
       rules: {
         userPwd: [{ required: true, validator: validatePass, trigger: "blur" }],
         checkuserPwd: [
@@ -127,28 +128,7 @@ export default {
     // submitForm(formName) {
     //   this.$refs[formName].validate(valid => {
     //     if (valid) {
-    //       const data = fetch(`/outletUsers/regOutlet`, {
-    //         method: "POST",
-    //         headers: {
-    //           "Content-Type": "application/x-www-form-urlencoded"
-    //         },
-    //         body: `userAcount=${this.ruleForm.userAcount}
-    //     &userPwd=${this.ruleForm.userPwd}
-    //     &userPhone=${this.ruleForm.userPhone}
-    //     &userMail=${this.ruleForm.userMail}
-    //     &userName=${this.ruleForm.userName}
-    //     &userType=${this.ruleForm.userType}
-    //     &userStatus=${this.ruleForm.userStatus}`
-    //       }).then(response => response.json());
-    //       if (data.code) {
-    //         alert("申请注册成功，等待管理员审核");
-    //         this.$router.push({
-    //           name: "_login",
-    //           params: { username: this.username }
-    //         });
-    //       } else {
-    //         alert("注册失败，账号重复");
-    //       }
+    //     this.regAsync()
     //     } else {
     //       console.log("error submit!!");
     //       return false;
@@ -182,7 +162,8 @@ export default {
         alert("注册失败，账号重复");
       }
     }
-  }
+  },
+  actions: {}
 };
 </script>
 <style>
