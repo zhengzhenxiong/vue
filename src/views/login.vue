@@ -1,7 +1,7 @@
 <template>
-  <el-card class="box-card">
-    <div slot="header" class="clearfix">
-      <span>爱宠帮登陆</span>
+  <el-card class="logins">
+    <div slot="header" class="clearfix" style="margin-top:200px">
+      <span style="underline:none">爱宠帮登陆</span>
     </div>
     <div class="text item">用户名称：
       <input type="text" v-model="userAcount">
@@ -94,14 +94,17 @@ export default {
   clear: both;
 }
 
-.box-card {
-  width: 800px;
-  height: 550px;
-  /* text-align: center; */
+.logins {
+  width: 100%;
+  height: 630px;
+  text-align: center;
   margin: 0 auto;
   background-image: url("../assets/2464.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+.logins.el-card__header{
+  border-bottom:none
 }
 </style>
 
