@@ -1,5 +1,6 @@
+
 <template>
-    <h1>商品</h1>
+    <GoodsGoodsList />
 </template>
 <script>
 export default {
