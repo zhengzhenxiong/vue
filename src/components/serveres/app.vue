@@ -1,11 +1,12 @@
 <template>
-    <h1>服务</h1>
+<ServeresServeresList/>
 </template>
 <script>
 export default {
-    name:'app'
-}
+  name: "app"
+};
 </script>
+
 <style>
 
 </style>
