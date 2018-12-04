@@ -1,7 +1,7 @@
 <template>
-  <el-container style="height: 680px; border: 1px solid #eee">
+  <el-container style="height: 600px; border: 1px solid #eee">
    
-    <el-aside width="160px" height="660px">
+    <el-aside width="200px">
       <el-menu :default-ative="$route.path">
         <el-submenu index="1">
           <template slot="title">
@@ -45,20 +45,15 @@
             <el-menu-item index="3-1"><router-link to="/info/serveres">我的服务</router-link></el-menu-item>
              <el-menu-item index="3-3"><router-link to="/info/addServeres">新增服务</router-link></el-menu-item>
           </el-menu-item-group>
-
-          <el-menu-item index="3-3">选项3</el-menu-item>
-
-                <el-submenu index="3-4">
-                    <template slot="title">选项4</template>
-                    <el-menu-item index="3-4-1">选项4-1</el-menu-item>
-                </el-submenu>
         </el-submenu>
       </el-menu>
     </el-aside>
 
     <el-container>
-      <el-header style="text-align: center; font-size: 30px;font-weight:600;height:100px;color:#fff">
-         <p>爱宠邦管理系统</p>
+      <el-header style="text-align: center;height:80px;color:#fff">
+        <router-link to="/" style="font-size:12px;color:#606266;float:right;margin-top:60px">退出系统</router-link>
+         <p><span style="font-weight:600;font-size: 30px;">爱宠邦管理系统</span></p>
+         
          <router-view></router-view>
          </el-header>
   </el-container>
@@ -81,6 +76,9 @@ export default {
 
 .el-aside {
   color: #333;
+}
+.el-pagination{
+  text-align: left
 }
 </style>
 

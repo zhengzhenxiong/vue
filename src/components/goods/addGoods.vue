@@ -1,9 +1,9 @@
 <template>
 <div>
-  <p style="font-size:24px;padding-bottom:20px;text-align:center; border-bottom:1px solid gray">新增商品</p>
+  <p style="font-size:24px;padding:20px 0;text-align:center; border-bottom:1px solid gray;color:#606266">新增商品</p>
   <el-form ref="form" :model="form" label-width="180px">
   <el-form-item label="商品名称" style="marginTop:50px" prop="goodsName">
-    <el-input v-model="form.goodsName" style="width:600px"></el-input>
+    <el-input v-model="form.goodsName" style="width:600px;margin-left:-350px"></el-input>
   </el-form-item>
   <div style="overflow:hidden">
   <el-form-item label="品类" style="float:left" prop="goodsType">
@@ -86,7 +86,7 @@
   </el-form-item>
 
  <el-upload
- style="margin:30px 0 50px 300px"
+ style="margin:30px 0 50px -180px"
   class="upload-demo"
   ref="upload"
   action="/img/upload"
@@ -99,8 +99,8 @@
   <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
 </el-upload>
 
-  <el-form-item>
-    <el-button type="primary" @click="touch" style="margin:0 300px 50px 0">立即创建</el-button>
+  <el-form-item style="margin-top:50px ">
+    <el-button type="primary" @click="touch" style="margin:0 200px 50px -380px">立即创建</el-button>
     <el-button>取消</el-button>
   </el-form-item> 
 </el-form>

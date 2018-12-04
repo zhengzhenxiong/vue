@@ -1,6 +1,6 @@
 <template>
 <div>
-  <p style="font-size:24px;padding-bottom:20px;text-align:center; border-bottom:1px solid gray">宠物列表</p>
+  <p style="font-size:24px;padding:20px 0;text-align:center; border-bottom:1px solid gray;color:#606266">宠物列表</p>
    <el-table
       :data="rows"
       max-height="500"
@@ -47,7 +47,8 @@
     </el-table-column>
     <el-table-column
       align="right"
-      width="280" >
+      fixed="right"
+      width="240" >
       <template slot="header" slot-scope="scope">
         <el-input
           v-model="conditions"
@@ -55,7 +56,7 @@
           @keyup.native.enter='search'
           placeholder="输入关键字搜索"/>      
       </template>
-      <template slot-scope="scope">
+      <template slot-scope="scope" fixed="right">
         <el-button size="mini" @click="seePic(scope.$index, scope.row),centerDialogVisible = true" style="margin-right:10px">查看图片</el-button>
         <el-dialog
           :modal-append-to-body="false"

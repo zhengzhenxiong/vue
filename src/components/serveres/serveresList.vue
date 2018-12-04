@@ -1,10 +1,10 @@
 <template>
 <div>
-<el-card class="box-card">
+<el-card class="box-card" style="margin-top:26px">
   <div slot="header" class="clearfix">
-    <span>我的服务</span>
+    <span style="font-size:24px;color:#606266">我的服务</span>
                                           <!-- 搜索 -->
-    <el-input v-model="content" style="float:right;width:200px" @keyup.native.enter="search" type="text" placeholder="请输入搜索内容"/>
+    <el-input v-model="content" style="float:right;width:200px" size="mini" @keyup.native.enter="search" type="text" placeholder="请输入搜索内容"/>
   </div>
      <el-table
        :data="rows"
@@ -99,15 +99,15 @@
                         :on-remove="handleRemove"
                         :on-success="successful"
                         :auto-upload="false">
-                        <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
-                        <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
+                        <el-button slot="trigger" size="mini" type="primary">选取文件</el-button>
+                        <el-button style="margin-left: 10px;" size="mini" type="success" @click="submitUpload">上传到服务器</el-button>
                         <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
                   </el-upload>
              </el-form>
              <el-form :inline="true" label-width="100px">
                 <el-form-item>
-                    <el-button type="success" @click="clickUpdate">立即更新</el-button>
-                    <el-button @click="dialogFormVisible = false">取消</el-button>
+                    <el-button type="success" size="mini" @click="clickUpdate">立即更新</el-button>
+                    <el-button @click="dialogFormVisible = false" size="mini">取消</el-button>
                 </el-form-item>
             </el-form>
             </el-dialog>

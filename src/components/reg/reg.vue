@@ -99,7 +99,7 @@ export default {
           { required: true, message: "不能为空", trigger: "blur" },
           {
             pattern: /^1[34578]\d{9}$/,
-            message: "只能为数字，并且11为",
+            message: "只能为数字，并且11位",
             trigger: "blur"
           }
         ],
@@ -144,13 +144,7 @@ export default {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
         },
-        body: `userAcount=${this.ruleForm.userAcount}
-        &userPwd=${this.ruleForm.userPwd}
-        &userPhone=${this.ruleForm.userPhone}
-        &userMail=${this.ruleForm.userMail}
-        &userName=${this.ruleForm.userName}
-        &userType=${this.ruleForm.userType}
-        &userStatus=${this.ruleForm.userStatus}`
+        body: `userAcount=${this.ruleForm.userAcount}&userPwd=${this.ruleForm.userPwd}&userPhone=${this.ruleForm.userPhone}&userMail=${this.ruleForm.userMail}&userName=${this.ruleForm.userName}&userType=${this.ruleForm.userType}&userStatus=${this.ruleForm.userStatus}`
       }).then(response => response.json());
       if (data.code) {
         alert("申请注册成功，等待管理员审核");

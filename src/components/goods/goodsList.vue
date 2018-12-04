@@ -1,6 +1,6 @@
 <template>
 <div>
-  <p style="font-size:24px;padding-bottom:20px;text-align:center; border-bottom:1px solid gray">商品列表</p>
+  <p style="font-size:24px;padding:20px 0;text-align:center; border-bottom:1px solid gray;color:#606266">商品列表</p>
    <el-table
        :data="rows"
        max-height="500"
@@ -77,8 +77,9 @@
     </el-table-column>
     <el-table-column
       align="right"
-      width="280" >
-      <template slot="header" slot-scope="scope">       
+      fixed="right"
+      width="240" >
+      <template slot="header" slot-scope="scope" >       
         <el-input
           v-model="conditions"
           size="mini"

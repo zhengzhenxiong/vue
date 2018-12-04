@@ -1,15 +1,15 @@
 <template>
 <div>
-      <el-card class="box-card">
+      <el-card class="box-card" style="margin-top:26px;width:100%">
             <div slot="header" class="clearfix">
-              <span>新增服务</span>
+              <span style="font-size:24px;color:#606266">新增服务</span>
             </div>
             <el-form :inline="true" ref="form" :model="form" label-width="105px">
                 <el-form-item label="服务名称">
-                    <el-input v-model="form.serviceName"></el-input>
+                    <el-input v-model="form.serviceName" style="width:220px"></el-input>
                 </el-form-item>
                 <el-form-item label="服务类型">
-                    <el-select v-model="form.serviceType" placeholder="请选择服务类型">
+                    <el-select v-model="form.serviceType" placeholder="请选择服务类型" style="width:220px">
                         <el-option v-for="item in serviceTypeOptions"
                         :key="item.value"
                         :label="item.name"
@@ -17,12 +17,24 @@
                         ></el-option>
                     </el-select>
                 </el-form-item>
-                <el-form-item label="服务时间">
+                
+                
+            </el-form>
+            <el-form :inline="true" ref="form" :model="form" label-width="105px">
+            <el-form-item label="服务时间" style="margin-left:-4px">
                     <el-col :span="11">
-                     <el-date-picker v-model="form.serviceSchedule" type="datetime" value-format="yyyy-MM-dd HH:mm:ss" placeholder="选择日期时间"></el-date-picker>  
+                     <el-date-picker v-model="form.serviceSchedule" type="datetime" value-format="yyyy-MM-dd HH:mm:ss" placeholder="选择日期时间" style="width:220px"></el-date-picker>  
                     </el-col>    
                 </el-form-item>
-            </el-form>
+        <el-form-item label="服务价格" >
+                  <el-select v-model="form.servicePrice" placeholder="请选择服务价格">
+                      <el-option v-for="item in servicePriceOptions"
+                        :key="item.value"
+                        :label="item.name"
+                        :value="item.name"></el-option>
+                  </el-select>
+              </el-form-item>
+                </el-form>
             <el-form :inline="true" ref="form" :model="form" label-width="100px">
                <el-form-item label="适用规格">
                     <el-select v-model="form.serviceCanFor" placeholder="请选择适用规格">
@@ -37,16 +49,16 @@
               <el-form-item label="服务规格">
                     <el-select v-model="form.serviceDetial" placeholder="请选择服务类型">
                         <el-option v-for="item in serviceDetialOptions"
+                        style="width:220px"
                         :key="item.value"
                         :label="item.name"
-                        :value="item.name"></el-option>
-                       
+                        :value="item.name"></el-option>  
                     </el-select>
                 </el-form-item>
             </el-form>
             <el-form :inline="true" ref="form" :model="form" label-width="100px">
               <el-form-item label="服务耗时">
-                    <el-select v-model="form.serviceTime" placeholder="请选择服务类型">
+                    <el-select v-model="form.serviceTime" placeholder="请选择服务类型" style="width:220px">
                         <el-option v-for="item in serviceTimeOptions"
                         :key="item.value"
                         :label="item.name"
@@ -55,23 +67,13 @@
                     </el-select>
                 </el-form-item>
                <el-form-item label="服务员等级">
-                    <el-select v-model="form.serviceLevel" placeholder="请选择服务类型">
+                    <el-select v-model="form.serviceLevel" placeholder="请选择服务类型" style="width:220px">
                         <el-option v-for="item in serviceLevelOptions"
                         :key="item.value"
                         :label="item.name"
                         :value="item.name"></el-option>
                     </el-select>
                 </el-form-item>
-            </el-form>
-            <el-form :inline="true" ref="form" :model="form" label-width="100px">
-              <el-form-item label="服务价格">
-                  <el-select v-model="form.servicePrice" placeholder="请选择服务价格">
-                      <el-option v-for="item in servicePriceOptions"
-                        :key="item.value"
-                        :label="item.name"
-                        :value="item.name"></el-option>
-                  </el-select>
-              </el-form-item>
             </el-form>
              <el-form :inline="true">  
                    <el-upload
@@ -83,14 +85,14 @@
                         :on-remove="handleRemove"
                         :auto-upload="false">
                         <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
-                        <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
+                        <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传图片</el-button>
                         <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
                   </el-upload>
              </el-form>
             <el-form :inline="true" ref="form" :model="form" label-width="100px">
-                <el-form-item style="margin-left: 450px" >
-                    <el-button type="success" @click="create()">立即新增</el-button>
-                    <el-button>取消</el-button>
+                <el-form-item style="margin:50px 0 0 450px" >
+                    <el-button type="primary" @click="create()" style="margin:0 160px 50px -380px">立即新增</el-button>
+                    <el-button type="primary">取消</el-button>
                 </el-form-item>
             </el-form>
           </el-card>
