@@ -63,12 +63,9 @@ export default new Router({
         path: 'outlets',
         name: 'outlets',
         
-        component: () => import(/* webpackChunkName: "about" */ './components/outlets/app.vue')
+        component: () => import(/* webpackChunkName: "about" */ './components/outlets/outlets.vue')
       }
     ],
     }
   ]
 })
-
-
-console.log(1231)
