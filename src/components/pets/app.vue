@@ -1,13 +1,12 @@
+
 <template>
-    <h1>商品</h1>
+    <PetsPetsList />
 </template>
 <script>
 export default {
-    name:"goods"
+    name:'app'
 }
 </script>
 <style>
 
 </style>
-
-
