@@ -238,14 +238,14 @@ export default {
     update: function(row) {
       // console.log(row)
         this.updateServiceName = row.serviceName,
-        (this.updateServiceType = row.serviceType),
-        (this.updateServiceSchedule = row.serviceSchedule),
-        (this.updateServiceCanFor = row.serviceCanFor),
-        (this.updateServiceDetial = row.serviceCanFor),
-        (this.updateServiceTime = row.serviceTime),
-        (this.updateServiceLevel = row.serviceLevel),
-        (this.updateServicePrice = row.servicePrice);
-      this.updateServiceImg = row.serviceImg; //图片
+        this.updateServiceType = row.serviceType,
+        this.updateServiceSchedule = row.serviceSchedule,
+        this.updateServiceCanFor = row.serviceCanFor,
+        this.updateServiceDetial = row.serviceCanFor,
+        this.updateServiceTime = row.serviceTime,
+        this.updateServiceLevel = row.serviceLevel,
+        this.updateServicePrice = row.servicePrice;
+        this.updateServiceImg = row.serviceImg; //图片
       var storage = window.localStorage; //把id存到本地
       storage._id = row._id;
     },

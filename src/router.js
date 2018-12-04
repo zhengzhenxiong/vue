@@ -3,9 +3,7 @@ import Router from 'vue-router'
 import Info from './views/info.vue'
 import Login from "./views/login.vue"
 import Reg from './components/reg/reg.vue'
-
 Vue.use(Router)
-
 export default new Router({
   routes: [
     {
