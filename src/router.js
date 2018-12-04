@@ -10,12 +10,6 @@ export default new Router({
       path: '/',
       name: 'login',
       component:Login
-      // children:[
-      //   {
-      //     path:"/shop/goods",
-      //     component:Goods
-      //   }
-      // ]
     },
     {
       path: '/login/:username',
@@ -30,17 +24,30 @@ export default new Router({
     {
       path: '/info',
       name: 'info',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/info.vue'),
       children:[{
         path: 'goods',
         name: 'goods',
-        
         component: () => import(/* webpackChunkName: "about" */ './components/goods/app.vue')
       },
+      
+      {
+        path: 'addGoods',
+        name: 'addGoods',
+        component: () => import(/* webpackChunkName: "about" */ './components/goods/addGoods.vue')
+      },
+      {
+        path: 'pets',
+        name: 'pets',
+        component: () => import(/* webpackChunkName: "about" */ './components/pets/app.vue')
+      },
+      {
+        path: 'addPets',
+        name: 'addPets',
+        component: () => import(/* webpackChunkName: "about" */ './components/pets/addPets.vue')
+      },
       // 服务
+
       {
         path: 'serveres',
         name: 'serveres',
@@ -50,9 +57,6 @@ export default new Router({
       {
         path: 'addServeres',
         name: 'addServeres',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
         component: () => import(/* webpackChunkName: "about" */ './components/serveres/addServeres.vue')
       },   
       {
@@ -60,12 +64,11 @@ export default new Router({
         name: 'outlets',
         
         component: () => import(/* webpackChunkName: "about" */ './components/outlets/app.vue')
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-       
       }
     ],
     }
   ]
 })
+
+
+console.log(1231)
